@@ -1,0 +1,32 @@
+#include<graphics.h>
+#include<conio.h>
+#include<windows.h>
+#include<stdlib.h>
+int main()
+  {
+    int rad=20,i;
+    initwindow(1366,768,"");
+    while(1)
+    {
+    for(i=1;i<=19;i++)
+    {
+        circle(getmaxx()/2,getmaxy()/2,rad);
+        rad+=5;
+        delay(100);
+        cleardevice();
+        if(i==19)
+        {
+            cleardevice();
+            rad=20;
+            circle(getmaxx()/2,getmaxy()/2,rad);
+        }
+        if(GetAsyncKeyState(VK_LCONTROL))
+           {
+               delay(100);
+               exit(0);
+           }
+    }
+    }
+    getch();
+    closegraph();
+  }
